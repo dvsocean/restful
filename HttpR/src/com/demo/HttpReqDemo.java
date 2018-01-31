@@ -17,7 +17,7 @@ public class HttpReqDemo {
 		System.out.println(res);
     } 
 	
-	public static String dummyHttpReqRes2(String targetURL, String urlParameters) throws IOException {
+	public static String dummyHttpReqRes2(String targetURL, String dataParams) throws IOException {
 		URL url = new URL(targetURL);
 		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
         try {
@@ -30,7 +30,7 @@ public class HttpReqDemo {
 
             //Request
             DataOutputStream writer = new DataOutputStream (conn.getOutputStream());
-            writer.writeBytes(urlParameters);
+            writer.writeBytes(dataParams);
             writer.close();
 
             //Response
